@@ -1,0 +1,20 @@
+export const content = {
+  game: "Game",
+  people: "your friends",
+  trophy: "🏆",
+  avatars: {
+    devil: "😈",
+    robot: "🤖",
+    alien: "👽",
+    ghost: "👻",
+    clown: "🤡",
+    nerd: "🤓",
+    angel: "😇",
+    unicorn: "🦄",
+    chick: "🐣",
+    dolphin: "🐳",
+    snake: "🐍",
+    teddy: "🧸",
+  },
+  colors: ["blue", "purple", "pink", "orange", "green", "yellow"],
+};
