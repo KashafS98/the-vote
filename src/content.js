@@ -1,5 +1,5 @@
 export const content = {
-  game: "Game",
+  game: "game",
   people: "your friends",
   trophy: "🏆",
   avatars: {
@@ -15,6 +15,20 @@ export const content = {
     dolphin: "🐳",
     snake: "🐍",
     teddy: "🧸",
+    work: "👔",
+    nsfw: "🚫",
+    cat: "🐱",
+    dog: "🐶",
+    panda: "🐼",
+    fox: "🦊",
+    koala: "🐨",
+    bear: "🐻",
+    star: "⭐",
+    heart: "❤️",
+    wizard: "🧙‍♂️",
+    ninja: "🥷",
+    superhero: "🦸‍♀️",
+    vampire: "🧛‍♂️",
   },
   colors: ["blue", "purple", "pink", "orange", "green", "yellow"],
 };

@@ -7,11 +7,11 @@ const NSFW = "nsfw";
 
 export default function CreateGame({ handleNext }) {
   return (
-    <div className="my-8 w-full text-center flex flex-col items-center justify-center">
+    <div className="my-8 w-2/3 text-center flex flex-col items-center justify-center rounded-lg p-8">
       <Heading size="h4">Start a new {content.game}</Heading>
       <div className="flex w-full xl:w-2/3 justify-evenly">
-        <Card title={"Work"} onClick={() => handleNext(WORK)} />
-        <Card title={"NSFW"} onClick={() => handleNext(NSFW)} />
+        <Card avatar={"work"} title={"Work"} onClick={() => handleNext(WORK)} />
+        <Card avatar={"nsfw"} title={"NSFW"} onClick={() => handleNext(NSFW)} />
       </div>
     </div>
   );

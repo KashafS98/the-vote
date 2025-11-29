@@ -11,7 +11,7 @@ export default function JoinGame({ setoptions, handleNext }) {
 
   return (
     <MiniForm
-      title={`Join an Existing ${content.game}`}
+      title={`Join an existing ${content.game}`}
       placeholder={`Enter ${content.game} code`}
       onClick={setoptions}
       handleChange={handleInput}

@@ -1,4 +1,4 @@
-export default function Heading({ size, children, styles }) {
+export default function Heading({ size, children, styles, color }) {
   const sizeMapping = {
     h1: "text-5xl",
     h2: "text-3xl",
@@ -6,7 +6,7 @@ export default function Heading({ size, children, styles }) {
     h4: "text-xl",
   };
   return (
-    <h1 className={sizeMapping[size] + " font-bold mb-4 " + styles}>
+    <h1 className={sizeMapping[size] + " font-bold " + styles + " " + color}>
       {children}
     </h1>
   );

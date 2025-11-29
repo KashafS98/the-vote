@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Layout from "../containers/Layout";
-import { Navigate } from "react-router-dom";
 import { IoChevronBackCircleOutline } from "react-icons/io5";
 
 import UserDetails from "../containers/UserDetails";
@@ -9,6 +8,7 @@ import CreateGame from "../containers/CreateGame";
 
 import WaitingRoom from "../containers/WaitingRoom";
 import { socket } from "../socket";
+import Heading from "../components/Heading";
 
 export default function Home() {
   const [players, setPlayers] = useState([]);
@@ -48,6 +48,7 @@ export default function Home() {
   };
 
   const joinGame = (code) => {
+    console.log("joining game: ", code);
     // set up preGame
     setpregameSetup({ ...pregameSetup, gameCode: code, created: false });
     //next step
@@ -70,7 +71,7 @@ export default function Home() {
   };
 
   const saveUser = async (avatar, username) => {
-    // setpregameSetup({ ...pregameSetup, avatar, username });
+    setpregameSetup({ ...pregameSetup, avatar, username });
     // service:AddNewPlayer/:preGameSetup; adds user to room; socket start; returns status/room info
     if (pregameSetup.created) {
       socket.emit("create-game", {
@@ -118,7 +119,7 @@ export default function Home() {
         <div
           className="absolute top-10 left-10 text-3xl text-purple cursor-pointer"
           onClick={() => {
-            alert("Your changes will be lost");
+            // alert("Your changes will be lost");
             setstep(step - 1);
             socket.disconnect();
           }}
@@ -128,8 +129,9 @@ export default function Home() {
       )}
       {step === 0 && (
         <>
-          <JoinGame handleNext={joinGame} />
           <CreateGame handleNext={createGame} />
+          <Heading size="h4">OR</Heading>
+          <JoinGame handleNext={joinGame} />
         </>
       )}
       {/* {step === 1 && <GameDetails handleNext={createGame} />} */}

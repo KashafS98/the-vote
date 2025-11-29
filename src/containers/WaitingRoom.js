@@ -5,12 +5,12 @@ import Heading from "../components/Heading";
 import { content } from "../content";
 import { socket } from "../socket";
 import Button from "../components/Button";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export default function WaitingRoom({ pregameSetup, players }) {
   const [users, setusers] = useState(players);
   const navigate = useNavigate();
-  console.log("players: ", users);
+  console.log("players: ", users, pregameSetup);
   useEffect(() => {
     socket.on("new-player", (u) => {
       console.log("new players");
@@ -25,25 +25,32 @@ export default function WaitingRoom({ pregameSetup, players }) {
     socket.emit("start-game", pregameSetup.gameCode);
   };
 
+  const copyToClipboard = (text) => {
+    navigator.clipboard.writeText(text);
+    alert("Copied to clipboard: " + text);
+  };
+
   return (
     <>
-      <div className="flex justify-between w-full h-full">
-        <div>
+      <div className="w-full h-full">
+        <button
+          className="border-2 border-dotted border-purple p-1 mb-2"
+          onClick={() => copyToClipboard(pregameSetup.gameCode)}
+        >
+          <Heading size={"h2"} styles={"mb-0"}>
+            {pregameSetup.gameCode}
+          </Heading>
+        </button>
+        <div className="w-1/4">
           <Card
             title={pregameSetup.username}
             text={"🏆: 0"}
-            avatar={content.avatars[pregameSetup.avatar]}
+            avatar={pregameSetup.avatar}
           />
         </div>
         <div className="w-2/3">
-          <div className="border-2 border-dotted border-purple w-min	">
-            <Heading styles={"mb-0"} size={"h2"}>
-              {pregameSetup.gameCode}
-            </Heading>
-          </div>
-          <div className="mb-2">Game Type: {pregameSetup.gameType}</div>
-          <Heading styles={"mb-0"} size={"h4"}>
-            Players:
+          <Heading styles={"my-4"} size={"h4"}>
+            {content.avatars[pregameSetup.gameType]} Waiting for players...
           </Heading>
           <div className="flex">
             {users.map((i) => (

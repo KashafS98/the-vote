@@ -23,15 +23,10 @@ export default function Leaderboard({ players, restartGame, exitGame }) {
         ))}
       </ul>
 
-      <Button onClick={restartGame} className="w-full mt-4">
-        Restart Game
-      </Button>
-      <Button
-        onClick={exitGame}
-        className="w-full mt-2 bg-red-500 hover:bg-red-600"
-      >
-        Exit
-      </Button>
+      <div className="flex gap-4">
+        {/* <Button onClick={restartGame}>Restart Game</Button> */}
+        {/* <Button onClick={exitGame}>Exit Game</Button> */}
+      </div>
     </div>
   );
 }

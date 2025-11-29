@@ -12,7 +12,7 @@ export default function MiniForm({
   value,
 }) {
   return (
-    <div className="w-1/2 text-center">
+    <div className="w-2/3 text-center border p-8 rounded-lg">
       <Heading size={"h4"}>{title}</Heading>
       <Input
         value={value}

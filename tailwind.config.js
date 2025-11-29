@@ -21,6 +21,7 @@ module.exports = {
         "4xl": "2rem",
       },
       colors: {
+        primary: "#7e5bef",
         blue: "#1fb6ff",
         purple: "#7e5bef",
         grey: "#87809d",
@@ -30,6 +31,11 @@ module.exports = {
         yellow: "#ffc82c",
       },
     },
+    safelist: [
+      "bg-purple",
+      "text-white",
+      // any other conditional classes
+    ],
   },
   plugins: [],
 };
