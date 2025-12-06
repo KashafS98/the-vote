@@ -46,6 +46,7 @@ export default function Game() {
 
     // Receive question from backend
     socket.on("question", ({ question: q, round: r }) => {
+      console.log("Received question:", q, "for round:", r);
       setQuestion(q);
       setRound(r - 1); // backend 1-indexed
       setWaiting(false);
@@ -217,10 +218,10 @@ export default function Game() {
     <div className="h-screen w-screen text-center flex flex-col items-center justify-between lg:text-left lg:flex-row">
       <div className="w-full p-10 mx-auto flex flex-col justify-center text-center">
         {gameEnd ? (
-          <div className="w-full p-20">
+          <div className="w-full lg:p-20">
             {final.list.length > 0 && (
               <div className="text-left mb-4">
-                <div className="flex flex-wrap justify-center">
+                <div className="flex flex-wrap justify-center flex-col lg:flex-row">
                   {final.list.map((p, index) => (
                     <ResultCard
                       data={final.output[p.id]}
