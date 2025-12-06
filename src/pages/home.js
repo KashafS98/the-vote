@@ -117,7 +117,7 @@ export default function Home() {
     <Layout styles={"flex flex-col justify-center items-center"}>
       {step !== 0 && (
         <div
-          className="absolute top-10 left-10 text-3xl text-purple cursor-pointer"
+          className="absolute lg:top-5 lg:left-12 top-0 left-50 text-3xl text-purple cursor-pointer"
           onClick={() => {
             // alert("Your changes will be lost");
             setstep(step - 1);

@@ -1,10 +1,27 @@
 import classNames from "classnames";
 import { FaAward, FaPeopleGroup } from "react-icons/fa6";
+import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
 
 export default function ResultCard({ data, result, key, winner }) {
+  const { width, height } = useWindowSize();
   console.log("ResultCard data:", data, result, winner);
   return (
-    <div className="rounded-lg w-1/3 flex" key={key}>
+    <div className="rounded-lg lg:w-1/3 flex" key={key}>
+      {winner && (
+        <Confetti
+          width={width}
+          height={height}
+          gravity={0.213}
+          initialVelocityX={5}
+          initialVelocityY={4.104}
+          numberOfPieces={106}
+          opacity={0.77}
+          run
+          recycle={false}
+          wind={-0.026}
+        />
+      )}
       <div
         className={classNames(
           "border p-4 m-4 rounded-lg",

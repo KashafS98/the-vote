@@ -34,25 +34,26 @@ export default function WaitingRoom({ pregameSetup, players }) {
     <>
       <div className="w-full h-full">
         <button
-          className="border-2 border-dotted border-purple p-1 mb-2"
+          className="border-none p-1 mb-2"
           onClick={() => copyToClipboard(pregameSetup.gameCode)}
         >
           <Heading size={"h2"} styles={"mb-0"}>
+            {content.avatars[pregameSetup.gameType]} Room:{" "}
             {pregameSetup.gameCode}
           </Heading>
         </button>
-        <div className="w-1/4">
+        {/* <div className="w-1/4">
           <Card
             title={pregameSetup.username}
             text={"🏆: 0"}
             avatar={pregameSetup.avatar}
           />
-        </div>
-        <div className="w-2/3">
-          <Heading styles={"my-4"} size={"h4"}>
-            {content.avatars[pregameSetup.gameType]} Waiting for players...
+        </div> */}
+        <div className="lg:w-2/3 text-center lg:text-left">
+          <Heading styles={"my-4"} size={"h5"}>
+            Waiting for players...
           </Heading>
-          <div className="flex">
+          <div className="flex justify-center lg:justify-normal">
             {users.map((i) => (
               <div
                 className="flex flex-col items-center justify-center"

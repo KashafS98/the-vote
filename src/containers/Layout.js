@@ -52,7 +52,7 @@ export default function Layout({ children, styles }) {
           </div>
         </div>
         <div
-          className={`lg:h-full lg:shadow-lg md:w-1/2 lg:p-16 ${styles} relative`}
+          className={`lg:h-full lg:shadow-lg md:w-1/2 lg:p-16 py-8 ${styles} relative size-fit`}
         >
           {children}
         </div>
